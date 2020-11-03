@@ -7,33 +7,33 @@
  */
 
 /**
- * Description of Gato
+ * Description of Perro
  *
  * @author isra9
  */
 include_once 'Animal.php';
 
-class Gato extends Animal {
+class Perro extends Animal {
 
     public function __construct($nombre, $raza, $peso, $color) {
         parent::__construct($nombre, $raza, $peso, $color);
     }
 
     public function hacerRuido() {
-        return 'MIAU' . '<br>';
+        return 'GUAU' . '<br>';
     }
 
     public function hacerCaso() {
         $prob = random_int(1, 100);
-        if ($prob < 6) {
-            return'Hola , dame de comer.';
+        if ($prob < 90) {
+            return'Hola Hola Hola Hola Hola' . '<br>';
         } else {
-            return 'bfffff' . '<br>';
+            return 'PASO DE TI,GUAU.' . '<br>';
         }
     }
 
-    public function toserBolaPelo() {
-        return $this->nombre . ' escupe una cria de gremlin' . '<br>';
+    public function sacarPaseo() {
+        return $this->nombre . ' se va de paseo.' . '<br>';
     }
 
 }
