@@ -11,7 +11,7 @@
  *
  * @author isra9
  */
-class Animal {
+abstract class Animal {
 
     protected $nombre;
     protected $raza;
@@ -61,17 +61,11 @@ class Animal {
         return $this->nombre . ' ha sido vacunado.' . '<br>';
     }
 
-    public function comer() {
-        return $this->nombre . ' ha comido.' . '<br>';
-    }
+    public abstract function comer();
 
-    public function dormir() {
-        return $this->nombre . ' se duerme.' . '<br>';
-    }
+    public abstract function dormir();
 
-    public function hacerRuido() {
-        
-    }
+    public abstract function hacerRuido();
 
     public function hacerCaso() {
         

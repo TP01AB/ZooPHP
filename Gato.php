@@ -36,4 +36,12 @@ class Gato extends Animal {
         return $this->nombre . ' escupe una cria de gremlin' . '<br>';
     }
 
+    public function comer() {
+        return $this->nombre . ' ha comido pero quiere mas comida.' . '<br>';
+    }
+
+    public function dormir() {
+        return $this->nombre . ' sigue durmiendo.' . '<br>';
+    }
+
 }
