@@ -15,24 +15,36 @@ and open the template in the editor.
         include_once 'Animal.php';
         include_once 'Perro.php';
         include_once 'Gato.php';
-        session_start();
-
-        $perro = new Perro('bubu', 'yorkshire', 2, 'gris abuelo');
-        $gato = new Gato('mei', 'Rusa', 'DEMASIADO', 'Gris oscuro');
-
-        echo $gato->comer();
-        echo $gato->dormir();
-        echo $gato->hacerRuido();
-        echo $gato->hacerCaso();
-        echo $gato->vacunar();
-        echo $gato->toserBolaPelo();
-        ?><br><?php
-        echo $perro->comer();
-        echo $perro->dormir();
-        echo $perro->hacerRuido();
-        echo $perro->hacerCaso();
-        echo $perro->vacunar();
-        echo $perro->sacarPaseo();
+        include_once 'Elefante.php';
+        include_once 'Recursos.php';
+        $cont = 9;
+        $tablero = [];
+        $tablero = inicializar($tablero);
+        do {
+             echo '<h2>Segundo:'.$cont.'</h2><br>';
+            if ($cont % 2 == 0) {
+                hacerCosas($tablero);
+            }
+            if ($cont % 10 == 0) {
+                $animal = crearAnimal();
+                $tablero = colocarAnimal($animal, $tablero);
+                mostrarTablero($tablero);
+            }
+            if ($cont % 15 == 0) {
+                $tablero = moverse($tablero);
+                mostrarTablero($tablero);
+            }
+            if ($cont % 20 == 0) {
+                $tablero = abandonaParque($tablero);
+                mostrarTablero($tablero);
+            }
+            ob_flush();
+            flush();
+            
+           // sleep(1);
+            $cont++;
+           
+        } while ($cont < 40);
         ?>
     </body>
 </html>

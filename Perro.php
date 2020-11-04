@@ -36,4 +36,12 @@ class Perro extends Animal {
         return $this->nombre . ' se va de paseo.' . '<br>';
     }
 
+    public function comer() {
+        return $this->nombre . ' se pone a comer.' . '<br>';
+    }
+
+    public function dormir() {
+        return $this->nombre . ' se duerme.' . '<br>';
+    }
+
 }
